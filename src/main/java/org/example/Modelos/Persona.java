@@ -1,6 +1,6 @@
 package org.example.Modelos;
 
-public abstract class Persona implements Identificacion {
+public class Persona implements Identificacion {
     private String DNI;
     private String nombre;
     private String pape;
@@ -16,6 +16,26 @@ public abstract class Persona implements Identificacion {
     public void setPape(String pape) { this.pape = pape; }
 
     // Método de identificación (puede ser abstracto si cada subclase lo implementa)
-    public abstract String identificarte();
+
+
+    public Persona(String DNI, String nombre, String pape) {
+        this.DNI = DNI;
+        this.nombre = nombre;
+        this.pape = pape;
+    }
+
+    @Override
+    public String identificarte() {
+        return String.format("Hola soy una persona");
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "DNI='" + DNI + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", pape='" + pape + '\'' +
+                '}';
+    }
 }
 

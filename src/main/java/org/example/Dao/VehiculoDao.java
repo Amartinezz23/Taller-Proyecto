@@ -8,7 +8,6 @@ public interface VehiculoDao {
 
     void insertarVehiculo(Vehiculo vehiculo);
     void borrarVehiculo(String matricula);
-    void actualizarVehiculoNombre(Vehiculo vehiculo);
     List<Vehiculo> obtenerTodosVehiculos();
 
 }

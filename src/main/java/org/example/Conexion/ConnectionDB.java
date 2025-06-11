@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class ConnectionDB {
     private static ConnectionDB connectionDB = null;
-    private static String URL_DB = "jdbc:sqlite:Database/taller.db";
+    private static String URL_DB = "jdbc:sqlite:Database/tallerDB.db";
     private Connection connection;
 
     private ConnectionDB() {
