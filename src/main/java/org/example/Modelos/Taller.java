@@ -20,6 +20,14 @@ public class Taller {
     public List<Cliente> getClientes() { return clientes; }
     public void setClientes(List<Cliente> clientes) { this.clientes = clientes; }
 
-
+    @Override
+    public String toString() {
+        return "Taller{" +
+                "nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", propietario=" + propietario +
+                ", clientes=" + clientes +
+                '}';
+    }
 }
 

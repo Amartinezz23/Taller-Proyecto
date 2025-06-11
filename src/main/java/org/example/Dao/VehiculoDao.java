@@ -6,8 +6,7 @@ import java.util.List;
 
 public interface VehiculoDao {
 
-    void insertarVehiculo(Vehiculo vehiculo);
-    void borrarVehiculo(String matricula);
+    Vehiculo insertarVehiculo(Vehiculo vehiculo);
     List<Vehiculo> obtenerTodosVehiculos();
 
 }

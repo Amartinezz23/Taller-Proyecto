@@ -17,6 +17,13 @@ public class Cliente extends Persona {
     public void setVehiculos(List<Vehiculo> vehiculos) { this.vehiculos = vehiculos; }
 
 
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "telefono='" + telefono + '\'' +
+                ", vehiculos=" + vehiculos +
+                '}';
+    }
 
     @Override
     public String identificarte() {

@@ -15,7 +15,6 @@ public class Persona implements Identificacion {
     public String getPape() { return pape; }
     public void setPape(String pape) { this.pape = pape; }
 
-    // Método de identificación (puede ser abstracto si cada subclase lo implementa)
 
 
     public Persona(String DNI, String nombre, String pape) {

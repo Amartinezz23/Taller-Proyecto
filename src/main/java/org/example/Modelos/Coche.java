@@ -9,4 +9,18 @@ public class Coche extends Vehiculo {
 
     public int getAltura() { return altura; }
     public void setAltura(int altura) { this.altura = altura; }
+
+    public Coche(String matricula, String marca, String modelo, int anchura, int altura) {
+        super(matricula, marca, modelo);
+        this.anchura = anchura;
+        this.altura = altura;
+    }
+
+    @Override
+    public String toString() {
+        return "Coche{" +
+                "anchura=" + anchura +
+                ", altura=" + altura +
+                '}';
+    }
 }

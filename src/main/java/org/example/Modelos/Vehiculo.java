@@ -1,6 +1,6 @@
 package org.example.Modelos;
 
-public abstract class Vehiculo implements Identificacion {
+public  class Vehiculo implements Identificacion {
     private String matricula;
     private String marca;
     private String modelo;
@@ -17,6 +17,21 @@ public abstract class Vehiculo implements Identificacion {
     @Override
     public String identificarte() {
         return "Vehículo: " + matricula + " - " + marca + " " + modelo;
+    }
+
+    public Vehiculo(String matricula, String marca, String modelo) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "matricula='" + matricula + '\'' +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                '}';
     }
 }
 
