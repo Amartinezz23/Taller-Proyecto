@@ -10,14 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonaImple implements PersonaDao {
+    public static final String SQL = "SELECT * FROM Persona;";
+    public static final String SQL1 = "INSERT INTO Persona (dni, nombre, pape) VALUES (?, ?, ?);";
+    public static final String SQL2 = "DELETE FROM Persona WHERE dni = ?;";
     private Connection connection = ConnectionDB.getInstance().getConnection();
 
 
     @Override
     public Persona insertarPersona(Persona persona) {
-        String sql = "INSERT INTO Persona (dni, nombre, pape) VALUES (?, ?, ?);";
         int rows = 0;
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(SQL1)) {
             statement.setString(1, persona.getDNI());
             statement.setString(2, persona.getNombre());
             statement.setString(3, persona.getPape());
@@ -34,9 +36,8 @@ public class PersonaImple implements PersonaDao {
 
     @Override
     public boolean borrarPersona(String dni) {
-        String sql = "DELETE FROM Persona WHERE dni = ?;";
         int rows = 0;
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(SQL2)) {
             statement.setString(1, dni);
             rows = statement.executeUpdate();
             if (rows==1)
@@ -50,9 +51,8 @@ public class PersonaImple implements PersonaDao {
     @Override
     public List<Persona> obtenerTodosPersonas() {
         List<Persona> personas = new ArrayList<>();
-        String sql = "SELECT * FROM Persona;";
         try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(sql);
+            ResultSet resultSet = statement.executeQuery(SQL);
             while (resultSet.next()){
                 String dni = resultSet.getString(1);
                 String nom = resultSet.getString(2);
